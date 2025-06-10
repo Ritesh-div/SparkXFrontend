@@ -6,7 +6,6 @@ const genAI = new GoogleGenerativeAI(apiKey);
 const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
 
 export async function getGeminiResponse(prompt: string): Promise<string> {
-  console.log("kEY", apiKey);
 
   try {
     const result = await model.generateContent(prompt);
