@@ -16,7 +16,7 @@ export default function ResetPassword() {
     e.preventDefault();
     setLoading(true);
     const res = await fetch(
-      `https://sparkxai.netlify.app/api/user/reset-password`,
+      `https://sparkxbackend.onrender.com/api/user/reset-password`,
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },
