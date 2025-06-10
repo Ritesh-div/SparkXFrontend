@@ -16,7 +16,7 @@ export default function ResetPassword() {
     e.preventDefault();
     setLoading(true);
     const res = await fetch(
-      `https://sparkxbackend.onrender.com/api/user/reset-password`,
+      `${import.meta.env.VITE_API_BASE_URL}/api/user/reset-password`,
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },
