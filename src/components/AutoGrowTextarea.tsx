@@ -60,7 +60,7 @@ const handleSubmit = async (e: React.FormEvent) => {
         onChange={handleChange}
         placeholder="Ask Anything"
         style={{
-          width: "100%",
+          width: "98%",
           resize: "none",
           overflow: "hidden",
           fontSize: "16px",
