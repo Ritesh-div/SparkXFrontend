@@ -22,6 +22,8 @@ export function LogIn({ onSwitch }: { onSwitch: () => void }) {
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
   const user = JSON.parse(localStorage.getItem("user") || "{}"); //any where i get user using this
+  const [loading, setLoading] = useState(false);
+  
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -43,14 +45,17 @@ export function LogIn({ onSwitch }: { onSwitch: () => void }) {
       toast.success("Login successful!");
       console.log("Login successful:", data);
       localStorage.setItem("user", JSON.stringify(data.user));
+      setLoading(true);
       if (user) {
         toast.success("Logged in successfully!");
         navigate("/dashboard"); // Redirect to dashboard or home page
         window.location.reload();
+        setLoading(false);
       } else {
         navigate("/"); // Redirect to login if user is not found
       }
     } catch (error: any) {
+      setLoading(false);
       console.log("Error during login:", error);
       toast.error(error.error || "Login failed. Invaild email or password.");
     }

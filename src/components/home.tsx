@@ -35,7 +35,7 @@ export default function Dashboard() {
     <div className="realative">
       <div className="flex flex-1 h-[87vh] bg-amber-20 justify-center items-center flex-col gap-8">
         {/* Show prompt and response */}
-        <div className=" w-full break-words md:max-w-[67%] h-auto overflow-y-auto p-6  border-gray-200">
+        <div className="w-full break-words max-w-[67%] h-auto overflow-y-auto p-6  border-gray-200">
           {history.map((item, idx) => (
             <React.Fragment key={idx}>
               <div className="mt-4 mb-2 p-4 rounded-2xl bg-gray-50 w-fit ml-auto text-right ">
