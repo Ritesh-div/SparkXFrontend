@@ -1,12 +1,11 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
-const apiKey = import.meta.env.VITE_API_AI_KEY; 
+const apiKey = import.meta.env.VITE_API_AI_KEY;
 
 const genAI = new GoogleGenerativeAI(apiKey);
-const model = genAI.getGenerativeModel({ model: "gemini-3-flash-preview" });
+const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
 
 export async function getGeminiResponse(prompt: string): Promise<string> {
-
   try {
     const result = await model.generateContent(prompt);
     return result.response.text();
@@ -15,3 +14,4 @@ export async function getGeminiResponse(prompt: string): Promise<string> {
     return "Sorry, something went wrong.";
   }
 }
+ 
